@@ -94,7 +94,7 @@ https://github.com/doedje/jquery.soap/blob/1.6.1/README.md
 				var soapHeader = SOAPTool.processData({
 					data: config.SOAPHeader,
 					name: 'temp',
-					prefix: ''
+					prefix: (!!config.namespaceQualifier && !config.noPrefix) ? config.namespaceQualifier+':' : ''
 				});
 				if (!!soapHeader) {
 					if (soapHeader.hasChildren()) {
